@@ -77,7 +77,8 @@ input {
     top: 0;
 }
 
-#contact .container>img, #contact .container>fieldset>a>img {
+#contact .container>img,
+#contact .container>fieldset>a>img {
     margin-bottom: 0.5rem;
     width: 25%;
 }
@@ -102,11 +103,27 @@ input {
     align-items: center;
 }
 
-#contact .container>fieldset>form>label {
-    align-self: flex-start;
-    font-size: 0.8rem;
-    margin-top: 0.4rem;
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
     color: var(--brown);
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-container input:focus~label, input:valid~label {
+    top: -0.8rem;
+    left: 0;
+    color: var(--purple);
+    font-size: 0.8rem;
 }
 
 #contact .container>fieldset>legend {
@@ -133,11 +150,13 @@ input {
     background-color: var(--light-purple);
     color: var(--purple);
 }
+
 #contact .container>fieldset>span {
     font-size: 0.8rem;
     color: var(--brown);
     margin-bottom: 0.5rem;
 }
+
 #header {
     grid-area: header;
     display: flex;
