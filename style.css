@@ -241,4 +241,10 @@ input:valid~label {
     #content {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    @media screen and (max-width: 500px) {
+        #content {
+            grid-template-columns: 1fr;
+        }
+    }
 }
