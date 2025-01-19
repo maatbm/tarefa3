@@ -274,6 +274,10 @@ input:valid~label {
         transition: box-shadow 0.5s;
     }
 
+    #menu:hover {
+        box-shadow: none;
+    }
+
     #menu>img {
         width: 100%;
         transition: 0.5s;
@@ -290,17 +294,17 @@ input:valid~label {
 
     @media screen and (max-width: 500px) {
         #header>h1 {
-            font-size: 2rem;
+            font-size: 3rem;
         }
+
         #header>p {
             font-size: 1rem;
         }
+
         #content {
             grid-template-columns: 1fr;
         }
-        #menu{
-            width: 100%;
-        }
+
         #contact {
             width: 90%;
         }

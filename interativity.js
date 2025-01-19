@@ -1,16 +1,20 @@
-document.addEventListener('DOMContentLoaded', (charge_complete) => {
+document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('Form');
     const contact = document.getElementById('contact');
     const menu_logo = document.getElementById('menu-logo');
 
-    const display_contact = () => {
-        if (window.innerWidth <=768) {
-            contact.style.display = 'none';
+    function touch_contact_display(display) {
+        contact.style.display = display;
+    }
+
+    function display_contact() {
+        if (window.innerWidth <= 768) {
+            touch_contact_display('none');
         } else {
-            contact.style.display = 'block';
+            touch_contact_display('block');
         }
-    };
+    }
 
     display_contact();
     window.addEventListener('resize', display_contact);
@@ -20,16 +24,21 @@ document.addEventListener('DOMContentLoaded', (charge_complete) => {
         alert('Mensagem enviada com sucesso!');
         window.location.reload();
     });
-    
-    menu_logo.addEventListener('mouseover', (over_menu) => {
+
+    menu_logo.addEventListener('mouseover', () => {
         menu_logo.style.transform = 'rotate(90deg)';
-        contact.style.display = 'block';
-    });
-    
-    contact.addEventListener('mouseout', (out_menu) => {
-        menu_logo.style.transform = 'rotate(0deg)';
-        contact.style.display = 'none';
+        touch_contact_display('block');
     });
 
-    
+    contact.addEventListener('mouseover', () => {
+        touch_contact_display('block');
+    });
+
+    contact.addEventListener('mouseout', () => {
+        if (window.innerWidth <= 768) {
+            touch_contact_display('none');
+            menu_logo.style.transform = 'rotate(0deg)';
+        }
+    });
+
 });
