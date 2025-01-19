@@ -62,6 +62,10 @@ input {
     width: 100%;
 }
 
+#menu {
+    display: none;
+}
+
 #contact {
     grid-area: contact;
     background-color: var(--light-gray);
@@ -178,7 +182,7 @@ input:valid~label {
     text-shadow: black 2px 2px 2px;
 }
 
-#header>span {
+#header>p {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--gray);
@@ -231,13 +235,45 @@ input:valid~label {
 
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(fit-content,30%) 1fr 23%;
+        grid-template-rows: minmax(fit-content, 30%) 1fr 23%;
         grid-template-areas:
             "header"
             "content"
             "footer";
     }
-    
+
+    #header {
+        display: grid;
+        grid-template-columns: 10% 1fr;
+        grid-template-rows: minmax(fit-content, 20%) 1fr;
+        grid-template-areas:
+            "menu title"
+            "p p"
+        ;
+    }
+
+    #title {
+        grid-area: title;
+    }
+
+    #menu {
+        grid-area: menu;
+        display: block;
+        width: 80%;
+        background-color: var(--light-gray);
+        padding: 0.2rem;
+        border-radius: 0.4rem;
+    }
+
+    #menu>img {
+        width: 100%;
+    }
+
+    #p_title {
+        grid-area: p;
+        width: 90%;
+    }
+
     #content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -245,6 +281,9 @@ input:valid~label {
     @media screen and (max-width: 500px) {
         #content {
             grid-template-columns: 1fr;
+        }
+        #menu{
+            width: 100%;
         }
     }
 }
