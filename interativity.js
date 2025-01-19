@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('Form');
     const contact = document.getElementById('contact');
+    const menu = document.getElementById('menu');
     const menu_logo = document.getElementById('menu-logo');
 
     function touch_contact_display(display) {
@@ -25,20 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.reload();
     });
 
-    menu_logo.addEventListener('mouseover', () => {
-        menu_logo.style.transform = 'rotate(90deg)';
-        touch_contact_display('block');
+    let flag = false;
+    menu_logo.addEventListener('click', () => {
+        if (flag == false ) {
+            menu_logo.style.transform = 'rotate(90deg)';
+            menu.style.boxShadow = 'none';
+            touch_contact_display('block');
+            flag = true;
+        } else {
+            touch_contact_display('none');
+            menu_logo.style.transform = 'rotate(0deg)';
+            menu.style.boxShadow = '0px 0px 10px var(--pink)';
+            flag = false;
+        }
     });
 
     contact.addEventListener('mouseover', () => {
         touch_contact_display('block');
-    });
-
-    contact.addEventListener('mouseout', () => {
-        if (window.innerWidth <= 768) {
-            touch_contact_display('none');
-            menu_logo.style.transform = 'rotate(0deg)';
-        }
     });
 
 });

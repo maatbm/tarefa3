@@ -274,10 +274,6 @@ input:valid~label {
         transition: box-shadow 0.5s;
     }
 
-    #menu:hover {
-        box-shadow: none;
-    }
-
     #menu>img {
         width: 100%;
         transition: 0.5s;
@@ -290,6 +286,10 @@ input:valid~label {
 
     #content {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    #content .content-container:hover {
+        transform: none;
     }
 
     @media screen and (max-width: 500px) {
