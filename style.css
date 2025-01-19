@@ -13,7 +13,6 @@
 :root {
     --gray: rgb(54, 54, 54);
     --light-gray: #CBCBCB;
-    --green: #C1CD97;
     --light-purple: #C8B4BA;
     --yellow: #F3DDB3;
     --pink: #E18D96;
@@ -36,7 +35,15 @@ body {
         "footer footer";
     gap: 1rem;
     overflow-x: hidden;
-    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    background-color: var(--yellow);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
+    border-radius: 1rem;
 }
 
 textarea {
@@ -176,4 +183,8 @@ input {
 #footer {
     grid-area: footer;
     background-color: var(--pink);
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    color: var(--gray);
 }
