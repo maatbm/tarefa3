@@ -20,6 +20,7 @@
     --white: white;
     --purple: #B56C8B;
     --brown: #553D2A;
+    --black: black;
 }
 
 body {
@@ -179,7 +180,7 @@ input:valid~label {
     color: var(--brown);
     font-family: "Festive", serif;
     font-weight: bolder;
-    text-shadow: black 2px 2px 2px;
+    text-shadow: var(--black) 2px 2px 2px;
 }
 
 #header>p {
@@ -230,7 +231,13 @@ input:valid~label {
 
 @media screen and (max-width: 768px) {
     #contact {
-        display: none;
+        top: 2rem;
+        left: 1rem;
+        width: 40%;
+        height: fit-content;
+        padding: 1rem;
+        border-radius: 1rem;
+        position: absolute;
     }
 
     body {
@@ -263,10 +270,13 @@ input:valid~label {
         background-color: var(--light-gray);
         padding: 0.2rem;
         border-radius: 0.4rem;
+        box-shadow: var(--pink) 0px 0px 10px;
+        transition: box-shadow 0.5s;
     }
 
     #menu>img {
         width: 100%;
+        transition: 0.5s;
     }
 
     #p_title {
@@ -284,6 +294,9 @@ input:valid~label {
         }
         #menu{
             width: 100%;
+        }
+        #contact {
+            width: 90%;
         }
     }
 }
