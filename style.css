@@ -119,7 +119,8 @@ input {
     transition: 0.5s;
 }
 
-.input-container input:focus~label, input:valid~label {
+.input-container input:focus~label,
+input:valid~label {
     top: -0.8rem;
     left: 0;
     color: var(--purple);
@@ -166,6 +167,7 @@ input {
     border-bottom: 2px solid var(--pink);
     padding: 1rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 #header>h1 {
@@ -217,8 +219,26 @@ input {
 #footer {
     grid-area: footer;
     background-color: var(--pink);
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding: 3rem;
     color: var(--gray);
+}
+
+@media screen and (max-width: 768px) {
+    #contact {
+        display: none;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(fit-content,30%) 1fr 23%;
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+    
+    #content {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
