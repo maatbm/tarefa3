@@ -229,91 +229,93 @@ input:valid~label {
     color: var(--gray);
 }
 
-@media screen and (max-width: 800px) {
-    #header>#menu>p {
-        font-size: 0.8rem;
-        font-weight: bold;
-        color: var(--brown);
-    }
+@media screen and (max-width: 1200px) {
 
-    #contact {
-        top: 2rem;
-        left: 1rem;
-        width: 40%;
-        height: fit-content;
-        padding: 1rem;
-        border-radius: 1rem;
-        transition: 1s;
-        position: fixed;
-    }
-
-    body {
-        grid-template-columns: 1fr;
-        grid-template-rows: minmax(fit-content, 30%) 1fr 23%;
-        grid-template-areas:
-            "header"
-            "content"
-            "footer";
-    }
-
-    #header {
-        display: grid;
-        grid-template-columns: 10% 1fr;
-        grid-template-rows: minmax(fit-content, 20%) 1fr;
-        grid-template-areas:
-            "menu title"
-            "p p"
-        ;
-    }
-
-    #title {
-        grid-area: title;
-    }
-
-    #menu {
-        grid-area: menu;
-        display: block;
-        width: 80%;
-        background-color: var(--light-gray);
-        padding: 0.2rem;
-        border-radius: 0.4rem;
-        box-shadow: var(--pink) 0px 0px 10px;
-        transition: box-shadow 0.5s;
-    }
-
-    #menu>img {
-        width: 100%;
-        transition: 0.5s;
-    }
-
-    #p_title {
-        grid-area: p;
-        width: 90%;
-    }
-
-    #content {
+    #content{
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    @media screen and (max-width: 800px) {
 
-    #content .content-container:hover {
-        transform: none;
-    }
-
-    @media screen and (max-width: 500px) {
-        #header>h1 {
-            font-size: 3rem;
+        #contact {
+            top: 2rem;
+            left: 1rem;
+            width: 40%;
+            height: fit-content;
+            padding: 1rem;
+            border-radius: 1rem;
+            transition: 1s;
+            position: fixed;
         }
 
-        #header>p {
-            font-size: 1rem;
+        body {
+            grid-template-columns: 1fr;
+            grid-template-rows: minmax(fit-content, 30%) 1fr 23%;
+            grid-template-areas:
+                "header"
+                "content"
+                "footer";
+        }
+
+        #header {
+            display: grid;
+            grid-template-columns: 10% 1fr;
+            grid-template-rows: minmax(fit-content, 20%) 1fr;
+            grid-template-areas:
+                "menu title"
+                "p p"
+            ;
+        }
+
+        #title {
+            grid-area: title;
+        }
+
+        #menu {
+            grid-area: menu;
+            display: block;
+            width: 80%;
+            background-color: var(--light-gray);
+            padding: 0.2rem;
+            border-radius: 0.4rem;
+            box-shadow: var(--pink) 0px 0px 10px;
+            transition: box-shadow 0.5s;
+        }
+
+        #menu>img {
+            width: 100%;
+            transition: 0.5s;
+        }
+
+        #p_title {
+            grid-area: p;
+            width: 90%;
         }
 
         #content {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        #contact {
-            width: 90%;
+        #content .content-container:hover {
+            transform: none;
+        }
+
+        @media screen and (max-width: 500px) {
+            #header>h1 {
+                font-size: 3rem;
+            }
+
+            #header>p {
+                font-size: 1rem;
+            }
+
+            #content {
+                grid-template-columns: 1fr;
+            }
+
+            #contact {
+                width: 90%;
+            }
         }
     }
 }
