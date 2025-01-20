@@ -244,8 +244,15 @@ input:valid~label {
             height: fit-content;
             padding: 1rem;
             border-radius: 1rem;
-            transition: 1s;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
             position: fixed;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #contact.show {
+            opacity: 1;
+            visibility: visible;
         }
 
         body {
@@ -279,7 +286,7 @@ input:valid~label {
             padding: 0.2rem;
             border-radius: 0.4rem;
             box-shadow: var(--pink) 0px 0px 10px;
-            transition: box-shadow 0.5s;
+            transition: box-shadow 0.8s, transform 0.8s ease;
         }
 
         #menu>img {
