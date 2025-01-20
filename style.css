@@ -229,7 +229,7 @@ input:valid~label {
     color: var(--gray);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     #header>#menu>p {
         font-size: 0.8rem;
         font-weight: bold;

@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function display_contact() {
-        console.log(window.innerWidth);
         if (window.innerWidth <= 800) {
             touch_contact_display('none');
         } else {
@@ -28,17 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
         display_contact();
     });
 
-    var flag = false;
+    let flag = false;
     menu_logo.addEventListener('click', () => {
-        if (flag == false ) {
+        if (!flag) {
             menu_logo.style.transform = 'rotate(90deg)';
             menu.style.boxShadow = 'none';
             touch_contact_display('block');
+            document.body.style.overflow = 'hidden';
             flag = true;
         } else {
             touch_contact_display('none');
             menu_logo.style.transform = 'rotate(0deg)';
             menu.style.boxShadow = '0px 0px 10px var(--pink)';
+            document.body.style.overflow = '';
             flag = false;
         }
     });
