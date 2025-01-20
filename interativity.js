@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const form = document.getElementById('Form');
     const contact = document.getElementById('contact');
     const menu = document.getElementById('menu');
     const menu_logo = document.getElementById('menu-logo');
@@ -23,13 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     display_contact();
     window.addEventListener('resize', display_contact);
-
-    form.addEventListener('submit', (submit_cancel) => {
-        submit_cancel.preventDefault();
-        alert('Mensagem enviada com sucesso!');
-        window.location.reload();
-        display_contact();
-    });
 
     var flag = false;
     menu_logo.addEventListener('click', () => {
