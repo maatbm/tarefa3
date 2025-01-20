@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function display_contact() {
-        if (window.innerWidth <= 768) {
+        console.log(window.innerWidth);
+        if (window.innerWidth <= 800) {
             touch_contact_display('none');
         } else {
             touch_contact_display('block');
@@ -24,9 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         submit_cancel.preventDefault();
         alert('Mensagem enviada com sucesso!');
         window.location.reload();
+        display_contact();
     });
 
-    let flag = false;
+    var flag = false;
     menu_logo.addEventListener('click', () => {
         if (flag == false ) {
             menu_logo.style.transform = 'rotate(90deg)';

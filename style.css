@@ -230,6 +230,12 @@ input:valid~label {
 }
 
 @media screen and (max-width: 768px) {
+    #header>#menu>p {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: var(--brown);
+    }
+
     #contact {
         top: 2rem;
         left: 1rem;
@@ -237,7 +243,8 @@ input:valid~label {
         height: fit-content;
         padding: 1rem;
         border-radius: 1rem;
-        position: absolute;
+        transition: 1s;
+        position: fixed;
     }
 
     body {
